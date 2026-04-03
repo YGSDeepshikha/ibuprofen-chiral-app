@@ -19,36 +19,30 @@ st.subheader("🔬 What is Stereochemistry?")
 st.write("""
 Stereochemistry is the study of the three-dimensional (3D) arrangement of atoms in molecules.
 Even if two molecules have the same chemical formula, their spatial arrangement can change 
-their properties and behavior, especially in pharmaceuticals.
+their properties and behavior.
 """)
 
 st.subheader("💊 About the Compound: Ibuprofen")
 st.write("""
 Ibuprofen is a commonly used non-steroidal anti-inflammatory drug (NSAID).
 It helps in reducing pain, fever, and inflammation.
-It contains a chiral carbon, which makes it important in stereochemistry and drug effectiveness.
+It contains a chiral carbon, which makes it important in stereochemistry.
 """)
 
-# Image of Ibuprofen
-st.image(
-    "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ibuprofen2D.svg",
-    caption="Structure of Ibuprofen",
-    use_column_width=True
-)
+# 🔥 YOUR UPLOADED IMAGE (IMPORTANT)
+st.image("ibuprofen.png", caption="Ibuprofen Molecular Structure", use_column_width=True)
 
 st.subheader("⚛ What is R/S Configuration?")
 st.write("""
-R/S configuration is used to describe the spatial arrangement of groups around a chiral carbon atom.
-- R (Rectus): Clockwise arrangement
-- S (Sinister): Anticlockwise arrangement
-
-This helps in identifying the exact 3D orientation of molecules.
+R/S configuration describes the spatial arrangement of groups around a chiral carbon.
+- R: Clockwise
+- S: Anticlockwise
 """)
 
 st.markdown("---")
 
 # ================= MOLECULE =================
-st.header("🧪 Step 1: Molecule Structure (Simplified Representation)")
+st.header("🧪 Step 1: Molecule Structure (Simplified)")
 
 ibuprofen = {
     "C1": ["C2", "H", "H", "H"],
@@ -70,7 +64,7 @@ for carbon, groups in ibuprofen.items():
 
 if chiral_centres:
     for c in chiral_centres:
-        st.success(f"✔ {c} is a chiral centre (attached to 4 different groups)")
+        st.success(f"✔ {c} is a chiral centre")
 else:
     st.error("No chiral centres found")
 
@@ -85,20 +79,15 @@ def find_RS(groups):
     return "R" if sorted(groups) == groups else "S"
 
 for c in chiral_centres:
-    config = find_RS(ibuprofen[c])
-    st.write(f"🔹 {c} → {config} configuration")
+    st.write(f"{c} → {find_RS(ibuprofen[c])}")
 
 # ================= CONCLUSION =================
-st.header("✅ Final Conclusion")
+st.header("✅ Conclusion")
 
-st.markdown(f"""
-- Ibuprofen contains **{len(chiral_centres)} chiral centre(s)**  
-- The chiral carbon is: **{chiral_centres}**  
-- Configuration is: **R**  
-
-📌 This proves that Ibuprofen is a **chiral molecule**, which plays an important role in pharmaceutical activity.
+st.write(f"""
+Ibuprofen has {len(chiral_centres)} chiral centre(s).
+The chiral carbon is {chiral_centres} and it shows R configuration.
 """)
 
-# ================= FOOTER =================
 st.markdown("---")
-st.caption("📚 B.Tech AIML Mini Project | Chiral Centre Detection using Python & Streamlit")
+st.caption("📚 B.Tech AIML Mini Project")
