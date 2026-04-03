@@ -30,7 +30,7 @@ It contains a chiral carbon, which makes it important in stereochemistry.
 """)
 
 
-)
+
 
 st.subheader("⚛ What is R/S Configuration?")
 st.write("""
