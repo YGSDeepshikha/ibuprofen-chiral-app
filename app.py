@@ -30,7 +30,11 @@ It contains a chiral carbon, which makes it important in stereochemistry.
 """)
 
 # 🔥 YOUR UPLOADED IMAGE (IMPORTANT)
-st.image("ibuprofen.png", caption="Ibuprofen Molecular Structure", use_column_width=True)
+st.image(
+    "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ibuprofen2D.svg",
+    caption="Ibuprofen Molecular Structure",
+    use_column_width=True
+)
 
 st.subheader("⚛ What is R/S Configuration?")
 st.write("""
